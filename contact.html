@@ -14,21 +14,68 @@
   </style>
 </head>
 <body class="w3-theme-l5">
-
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+    <!-- Logo / Brand -->
     <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">
       <i class="fa fa-home w3-margin-right"></i>YOUTH CONNECT
     </a>
+
+    <!-- Desktop Links -->
     <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
     <a href="events.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Events</a>
     <a href="projects.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Projects</a>
     <a href="members.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Members</a>
     <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
 
+    <!-- Notifications Dropdown -->
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-button w3-padding-large" title="Notifications">
+        <i class="fa fa-bell"></i>
+        <span class="w3-badge w3-right w3-small w3-green">3</span>
+      </button>
+      <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+        <a href="#" class="w3-bar-item w3-button">One new friend request</a>
+        <a href="#" class="w3-bar-item w3-button">Someone posted on your wall</a>
+        <a href="#" class="w3-bar-item w3-button">... liked your post</a>
+      </div>
+    </div>
+
+    <!-- Avatar -->
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+      <img src="/w3images/avatar2.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar">
+    </a>
+
+    <!-- Hamburger Icon (for small screens) -->
+    <a href="javascript:void(0);" class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
   </div>
 </div>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+  <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">About</a>
+  <a href="events.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Events</a>
+  <a href="projects.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Projects</a>
+  <a href="members.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Members</a>
+  <a href="contact.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Contact</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+</div>
+
+<!-- Toggle Script -->
+<script>
+function toggleFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") === -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
 
 <!-- Page Content -->
 <div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
