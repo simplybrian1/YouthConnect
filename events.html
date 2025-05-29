@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Events & News</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+</style>
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    .event-card, .news-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+    }
+    .event-gallery img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 8px 0;
+    }
+    .search-bar {
+      margin: 20px 0;
+    }
+  </style>
+</head>
+<body class="w3-content" style="max-width:1200px">
+
+
+     <!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>YOUTH CONNECT</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
+   <a href="events.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Events</a>
+   <a href="projects.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Projects</a>
+   <a href="members.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Members</a>
+   <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
+
+  <div class="w3-dropdown-hover w3-hide-small">
+    <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>     
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
+      <a href="#" class="w3-bar-item w3-button">One new friend request</a>
+      <a href="#" class="w3-bar-item w3-button">John Doe posted on your wall</a>
+      <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
+    </div>
+  </div>
+  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
+    <img src="/w3images/avatar2.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar">
+  </a>
+ </div>
+</div>
+  <div class="w3-container">
+  </div>
+
+
+  <div class="w3-container">
+
+    <!-- Events Calendar -->
+    <section>
+      <h2>Upcoming Events</h2>
+
+      <div class="event-card">
+        <h3>Annual Club Meeting</h3>
+        <p><strong>Date:</strong> June 15, 2025</p>
+        <p><strong>Location:</strong> Community Hall, Kisumu</p>
+        <p><strong>Description:</strong> Join us for our annual general meeting. Open to all members.</p>
+        <button class="w3-button w3-green">RSVP Now</button>
+      </div>
+
+      <div class="event-card">
+        <h3>Youth Training Camp</h3>
+        <p><strong>Date:</strong> July 10–15, 2025</p>
+        <p><strong>Location:</strong> Moi Stadium</p>
+        <p><strong>Description:</strong> A 5-day skills camp for youth under 18. Registration required.</p>
+        <button class="w3-button w3-green">Register</button>
+      </div>
+
+    </section>
+
+    <!-- Photo Gallery -->
+    <section>
+      <h2>Event Photos</h2>
+      <div class="event-gallery w3-row-padding">
+        <div class="w3-half"><img src="images/event1.jpg" alt="Event 1"></div>
+        <div class="w3-half"><img src="images/event2.jpg" alt="Event 2"></div>
+        <div class="w3-half"><img src="images/event3.jpg" alt="Event 3"></div>
+        <div class="w3-half"><img src="images/event4.jpg" alt="Event 4"></div>
+      </div>
+    </section>
+
+    <!-- News and Announcements -->
+    <section>
+      <h2>News & Announcements</h2>
+
+      <!-- Search and Filter -->
+      <div class="search-bar">
+        <input class="w3-input w3-border" type="text" placeholder="Search news by keyword or category...">
+      </div>
+
+      <div class="news-card">
+        <h3>Scholarship Applications Now Open</h3>
+        <p><strong>Date:</strong> May 20, 2025</p>
+        <p>We’re accepting applications for our 2025 education scholarship. Deadline is June 30. <a href="#">Apply here</a>.</p>
+      </div>
+
+      <div class="news-card">
+        <h3>Upcoming Elections for Club Leadership</h3>
+        <p><strong>Date:</strong> May 10, 2025</p>
+        <p>Nominations are now open for the 2025 leadership elections. Members are encouraged to participate.</p>
+      </div>
+
+      <div class="news-card">
+        <h3>Match Report: Victory Against Rivals</h3>
+        <p><strong>Date:</strong> April 28, 2025</p>
+        <p>Our team delivered a stellar performance last weekend. Read the full match report <a href="#">here</a>.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="w3-container w3-blue w3-center w3-padding-16">
+    <p>© 2025 Our Club. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Member Directory - Youth Connect</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
+    .badge-volunteer {background-color: #4CAF50; color: white; padding: 2px 5px; border-radius: 5px;}
+    .badge-leader {background-color: #2196F3; color: white; padding: 2px 5px; border-radius: 5px;}
+    .badge-alumni {background-color: #FF5722; color: white; padding: 2px 5px; border-radius: 5px;}
+  </style>
+</head>
+<body class="w3-theme-l5">
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">
+    <i class="fa fa-home w3-margin-right"></i>YOUTH CONNECT
+  </a>
+  <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
+  <a href="events.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Events</a>
+  <a href="projects.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Projects</a>
+  <a href="members.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Members</a>
+  <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
+ </div>
+</div>
+
+<!-- Main Content -->
+<div class="w3-container w3-content" style="max-width:1400px; margin-top:80px">    
+  <div id="login-section" class="w3-card w3-white w3-padding w3-center">
+    <h2>Member Login Required</h2>
+    <p>This directory is only accessible to registered members.</p>
+    <button onclick="simulateLogin()" class="w3-button w3-blue w3-margin-top">Log in as Member</button>
+  </div>
+
+  <div id="members-directory" class="w3-row-padding w3-margin-top" style="display:none">
+    <h2 class="w3-center">Member Directory</h2>
+
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-card w3-white w3-round w3-padding">
+        <img src="https://via.placeholder.com/150" alt="Jane" class="w3-circle" style="width:100px">
+        <h4>Jane Doe</h4>
+        <p>President</p>
+        <span class="badge-leader">Leader</span>
+        <p><button class="w3-button w3-theme-d1 w3-margin-top" onclick="openContactForm('Alex Mwangi')">Contact</button></p>
+      </div>
+    </div>
+
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-card w3-white w3-round w3-padding">
+        <img src="https://via.placeholder.com/150" alt="John" class="w3-circle" style="width:100px">
+        <h4></h4>
+        <p>Event Coordinator</p>
+        <span class="badge-volunteer">Volunteer</span>
+        <p><button class="w3-button w3-theme-d1 w3-margin-top" onclick="openContactForm('John Mutua')">Contact</button></p>
+      </div>
+    </div>
+
+    <!-- Add more members here -->
+  </div>
+ffxg
+  <!-- Contact Modal -->
+  <div id="contactModal" class="w3-modal">
+    <div class="w3-modal-content w3-animate-top w3-card-4">
+      <header class="w3-container w3-theme">
+        <span onclick="document.getElementById('contactModal').style.display='none'" 
+        class="w3-button w3-display-topright">&times;</span>
+        <h3>Contact Member</h3>
+      </header>
+      <div class="w3-container">
+        <form class="w3-container w3-padding">
+          <p>Send a message to <span id="contactName"></span>:</p>
+          <input class="w3-input w3-border" type="text" placeholder="Your Name" required>
+          <input class="w3-input w3-border w3-margin-top" type="email" placeholder="Your Email" required>
+          <textarea class="w3-input w3-border w3-margin-top" placeholder="Your Message" required></textarea>
+          <button class="w3-button w3-theme w3-margin-top" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function simulateLogin() {
+    document.getElementById('login-section').style.display = 'none';
+    document.getElementById('members-directory').style.display = 'block';
+  }
+
+  function openContactForm(name) {
+    document.getElementById('contactName').innerText = name;
+    document.getElementById('contactModal').style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
