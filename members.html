@@ -1,148 +1,182 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Member Directory - Youth Connect</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <title>Youth Connect</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
-    html, body, h1, h2, h3, h4, h5 {font-family: "Open Sans", sans-serif}
-    .badge-volunteer {background-color: #4CAF50; color: white; padding: 2px 5px; border-radius: 5px;}
-    .badge-leader {background-color: #2196F3; color: white; padding: 2px 5px; border-radius: 5px;}
-    .badge-alumni {background-color: #FF5722; color: white; padding: 2px 5px; border-radius: 5px;}
+    html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+    .w3-sidebar {z-index: 3; width: 250px; top: 52px; bottom: 0; height: inherit;}
   </style>
 </head>
-<body class="w3-theme-l5">
+<body>
+
 <!-- Navbar -->
 <div class="w3-top">
-  <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-    <!-- Logo / Brand -->
-    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-theme-d4">
-      <i class="fa fa-home w3-margin-right"></i>YOUTH CONNECT
-    </a>
-
-    <!-- Desktop Links -->
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-theme-l1">Youth Connect</a>
+    <a href="index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
     <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
-    <a href="events.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Events</a>
-    <a href="projects.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Projects</a>
-    <a href="members.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Members</a>
     <a href="contact.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact</a>
-
-    <!-- Notifications Dropdown -->
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-button w3-padding-large" title="Notifications">
-        <i class="fa fa-bell"></i>
-        <span class="w3-badge w3-right w3-small w3-green">3</span>
-      </button>
-      <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
-        <a href="#" class="w3-bar-item w3-button">One new friend request</a>
-        <a href="#" class="w3-bar-item w3-button">Someone posted on your wall</a>
-        <a href="#" class="w3-bar-item w3-button">... liked your post</a>
+    <a href="projects.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Projects</a>
+    <a href="events.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Events</a>
+    <div id="profileIcon" style="display: none;" class="w3-dropdown-hover w3-right">
+  <button onclick="openProfile()" class="w3-button w3-padding-large" title="My Profile">
+    <img src="/images/download.png" class="w3-circle" style="height:23px;width:23px" alt="My Profile">
+  </button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button" onclick="viewProfile()">View Profile</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="logout()">Logout</a>
       </div>
     </div>
-
-    <!-- Avatar -->
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account">
-      <img src="/w3images/avatar2.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar">
-    </a>
-
-    <!-- Hamburger Icon (for small screens) -->
-    <a href="javascript:void(0);" class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
   </div>
 </div>
-
-<!-- Navbar on small screens -->
-<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
-  <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">About</a>
-  <a href="events.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Events</a>
-  <a href="projects.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Projects</a>
-  <a href="members.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Members</a>
-  <a href="contact.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Contact</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
-</div>
-
-<!-- Toggle Script -->
-<script>
-function toggleFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") === -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
-</script>
 
 <!-- Main Content -->
-<div class="w3-container w3-content" style="max-width:1400px; margin-top:80px">    
-  <div id="login-section" class="w3-card w3-white w3-padding w3-center">
-    <h2>Member Login Required</h2>
-    <p>This directory is only accessible to registered members.</p>
-    <button onclick="simulateLogin()" class="w3-button w3-blue w3-margin-top">Log in as Member</button>
+<div class="w3-main" style="margin-top:60px">
+
+  <!-- Member Registration Section -->
+  <div id="register-section" class="w3-card w3-white w3-padding w3-center">
+    <h2>Member Registration</h2>
+    <form id="registrationForm" onsubmit="registerMember(event)">
+      <input class="w3-input w3-margin-bottom" type="text" id="regName" placeholder="Full Name" required>
+      <input class="w3-input w3-margin-bottom" type="email" id="regEmail" placeholder="Email" required>
+      <input class="w3-input w3-margin-bottom" type="password" id="regPassword" placeholder="Password" required>
+      <button class="w3-button w3-green" type="submit">Register</button>
+    </form>
+    <p class="w3-small">Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
   </div>
 
-  <div id="members-directory" class="w3-row-padding w3-margin-top" style="display:none">
-    <h2 class="w3-center">Member Directory</h2>
-
-    <div class="w3-col m4 w3-margin-bottom">
-      <div class="w3-card w3-white w3-round w3-padding">
-        <img src="https://via.placeholder.com/150" alt="Jane" class="w3-circle" style="width:100px">
-        <h4>Jane Doe</h4>
-        <p>President</p>
-        <span class="badge-leader">Leader</span>
-        <p><button class="w3-button w3-theme-d1 w3-margin-top" onclick="openContactForm('Alex Mwangi')">Contact</button></p>
-      </div>
-    </div>
-
-    <div class="w3-col m4 w3-margin-bottom">
-      <div class="w3-card w3-white w3-round w3-padding">
-        <img src="https://via.placeholder.com/150" alt="John" class="w3-circle" style="width:100px">
-        <h4></h4>
-        <p>Event Coordinator</p>
-        <span class="badge-volunteer">Volunteer</span>
-        <p><button class="w3-button w3-theme-d1 w3-margin-top" onclick="openContactForm('John Mutua')">Contact</button></p>
-      </div>
-    </div>
-
-    <!-- Add more members here -->
+  <!-- Login Section -->
+  <div id="login-section" class="w3-card w3-white w3-padding w3-center" style="display: none;">
+    <h2>Login</h2>
+    <form onsubmit="simulateLogin(); return false;">
+      <input class="w3-input w3-margin-bottom" type="text" placeholder="Username" required>
+      <input class="w3-input w3-margin-bottom" type="password" placeholder="Password" required>
+      <button class="w3-button w3-blue" type="submit">Login</button>
+    </form>
   </div>
-ffxg
-  <!-- Contact Modal -->
-  <div id="contactModal" class="w3-modal">
-    <div class="w3-modal-content w3-animate-top w3-card-4">
-      <header class="w3-container w3-theme">
-        <span onclick="document.getElementById('contactModal').style.display='none'" 
-        class="w3-button w3-display-topright">&times;</span>
-        <h3>Contact Member</h3>
-      </header>
-      <div class="w3-container">
-        <form class="w3-container w3-padding">
-          <p>Send a message to <span id="contactName"></span>:</p>
-          <input class="w3-input w3-border" type="text" placeholder="Your Name" required>
-          <input class="w3-input w3-border w3-margin-top" type="email" placeholder="Your Email" required>
-          <textarea class="w3-input w3-border w3-margin-top" placeholder="Your Message" required></textarea>
-          <button class="w3-button w3-theme w3-margin-top" type="submit">Send</button>
-        </form>
-      </div>
+
+  <!-- Members Directory -->
+  <div id="members-directory" class="w3-card w3-white w3-padding" style="display: none;">
+    <h2>Members Directory</h2>
+    <p>Welcome to the members' area.</p>
+  </div>
+</div>
+
+<!-- Profile Modal -->
+<div id="profileModal" class="w3-modal">
+  <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+    <header class="w3-container w3-theme">
+      <span onclick="document.getElementById('profileModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+      <h3>My Profile</h3>
+    </header>
+    <div class="w3-container">
+      <p><b>Name:</b> <span id="profileName"></span></p>
+      <p><b>Email:</b> <span id="profileEmail"></span></p>
+    </div>
+  </div>
+</div>
+<div id="profileModal" class="w3-modal" style="display:none;">
+  <div class="w3-modal-content w3-card-4 w3-animate-top">
+    <header class="w3-container w3-blue">
+      <span onclick="document.getElementById('profileModal').style.display='none'" 
+      class="w3-button w3-display-topright">&times;</span>
+      <h3>My Profile</h3>
+    </header>
+    <div class="w3-container w3-padding">
+      <p><strong>Name:</strong> <span id="profileName">Jane Doe</span></p>
+      <p><strong>Email:</strong> <span id="profileEmail">janedoe@example.com</span></p>
+      <button class="w3-button w3-red" onclick="logout()">Logout</button>
     </div>
   </div>
 </div>
 
+
+
+<!-- Scripts -->
 <script>
+  let memberData = {};
+
+  function registerMember(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('regName').value;
+  const email = document.getElementById('regEmail').value;
+  const password = document.getElementById('regPassword').value;
+
+  // Store member data as JSON (optional)
+  const memberData = { name, email, password };
+  localStorage.setItem('memberData', JSON.stringify(memberData));
+
+  alert("Registration successful!");
+
+  // Show profile icon (make sure it exists in your HTML)
+  const profileIcon = document.getElementById('profileIcon');
+  if(profileIcon) profileIcon.style.display = 'block';
+
+  // Switch to login view
+  showLogin();
+}
+
+
+
+  function showLogin() {
+    document.getElementById('register-section').style.display = 'none';
+    document.getElementById('login-section').style.display = 'block';
+  }
+
   function simulateLogin() {
     document.getElementById('login-section').style.display = 'none';
     document.getElementById('members-directory').style.display = 'block';
+    document.getElementById('profileIcon').style.display = 'block';
   }
 
-  function openContactForm(name) {
-    document.getElementById('contactName').innerText = name;
-    document.getElementById('contactModal').style.display = 'block';
+  function viewProfile() {
+    document.getElementById('profileName').innerText = memberData.name || "Guest";
+    document.getElementById('profileEmail').innerText = memberData.email || "Not Available";
+    document.getElementById('profileModal').style.display = 'block';
   }
+
+  function logout() {
+    function logout() {
+  // Clear stored user data (logout)
+  localStorage.removeItem('memberData');
+
+  // Hide the profile modal
+  document.getElementById('profileModal').style.display = 'none';
+
+  // Option 1: Redirect to login page (if you have one)
+  // window.location.href = 'login.html';
+
+  // Option 2: Or show the login form if it’s part of same page
+  if (typeof showLogin === 'function') {
+    showLogin();
+  } else {
+    alert('Logged out! Please refresh or navigate to login.');
+  }
+}
+
+  }
+
+  window.onload = () => {
+    document.getElementById('login-section').style.display = 'none';
+    document.getElementById('members-directory').style.display = 'none';
+    document.getElementById('register-section').style.display = 'block';
+  };
+  function openProfile() {
+  const memberData = JSON.parse(localStorage.getItem('memberData'));
+  const name = memberData?.name || 'Jane Doe';
+  const email = memberData?.email || 'janedoe@example.com';
+  
+  document.getElementById('profileName').textContent = name;
+  document.getElementById('profileEmail').textContent = email;
+  document.getElementById('profileModal').style.display = 'block';
+}
+
 </script>
 
 </body>
